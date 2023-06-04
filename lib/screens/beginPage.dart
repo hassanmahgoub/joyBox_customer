@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_typing_uninitialized_variables
 // ignore_for_file: file_names, non_constant_identifier_names, valid_regexps, prefer_const_constructors, unused_local_variable, deprecated_member_use, camel_case_types, avoid_print, body_might_complete_normally_nullable, unused_import
 
 import 'package:flutter/material.dart';
@@ -7,7 +7,6 @@ import 'package:flutter_svg/svg.dart';
 import 'AddNewAccount.dart';
 import 'LoginPage.dart';
 import 'MyHomePage.dart';
-import 'NavigationBar.dart';
 
 class BeginPage extends StatefulWidget {
   const BeginPage({Key? key, required}) : super(key: key);
@@ -191,7 +190,7 @@ class _HomePageState extends State<BeginPage> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomePage()));
+                                    builder: (context) => MyHomePage()));
                           },
                         ),
                       ],

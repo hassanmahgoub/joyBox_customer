@@ -2,13 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:joy_cu/widgets/TicketContainer.dart';
-import 'package:joy_cu/widgets/data.dart';
 import 'package:snapping_sheet/snapping_sheet.dart';
 
 import '../widgets/MyTicket.dart';
-import 'FavouriteEvents.dart';
 import 'PickNow.dart';
 
 class AboutEvent1 extends StatefulWidget {
@@ -29,6 +25,7 @@ class _AboutEvent1State extends State<AboutEvent1> {
             grabbingHeight: 10,
             sheetAbove: SnappingSheetContent(
               sizeBehavior: SheetSizeStatic(size: 857),
+              
               draggable: true,
               child: Container(
                 height: 60,
@@ -44,7 +41,7 @@ class _AboutEvent1State extends State<AboutEvent1> {
                       child: Image.asset(
                         'assets/images/Image.png',
                         fit: BoxFit.cover,
-                        height: 856,
+                        height: 920,
                       )),
                   Container(
                     height: 900,
@@ -67,7 +64,7 @@ class _AboutEvent1State extends State<AboutEvent1> {
                           ),
                         ),
                         SizedBox(
-                          height: 600,
+                          height: 590,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

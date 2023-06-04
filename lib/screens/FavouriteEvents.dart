@@ -181,12 +181,12 @@ class _FavouriteEventsState extends State<FavouriteEvents> {
                                                                       FontWeight
                                                                           .bold),
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                               height: 5,
                                                             ),
                                                             GestureDetector(
                                                               onTap: () {
-                                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutEvent1()));
+                                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AboutEvent1()));
                                                               },
                                                               child: Text(
                                                                 user.about,

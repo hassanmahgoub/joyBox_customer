@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'NavigationBar.dart';
+import 'MyHomePage.dart';
 import 'PasswordRemember.dart';
 
 class loginPage extends StatefulWidget {
@@ -191,7 +191,7 @@ class _HomePageState extends State<loginPage> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      HomePage()));
+                                                      MyHomePage()));
                                         },
                                         context: context,
                                         type: QuickAlertType.success,

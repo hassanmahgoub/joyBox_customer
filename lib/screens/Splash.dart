@@ -40,6 +40,7 @@ class _SplashState extends State<Splash> {
               height: 180,
             ),
             AnimatedPositioned(
+              // ignore: prefer_const_constructors
               duration: Duration(milliseconds: 1000),
               left: 130,
               right: 130,
