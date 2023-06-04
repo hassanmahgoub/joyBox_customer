@@ -38,7 +38,9 @@ class _PasswordRememberState extends State<PasswordRemember> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SvgPicture.asset(
-                    'images/Inner_patterns470x416.svg',
+                    'assets/images/Inner_patterns470x416.svg',
+                    fit: BoxFit.cover,
+                    height: 400,
                     width: screenSize.width,
                   ),
                   Padding(
@@ -92,25 +94,23 @@ class _PasswordRememberState extends State<PasswordRemember> {
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(7),
-                                    borderSide: BorderSide( color: Colors.white)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7),
+                                  borderSide: BorderSide(color: Colors.white)),
                               enabledBorder: OutlineInputBorder(
                                   borderSide:
                                       const BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(7)),
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none),
-                              label: 
-                                    Text(
-                                      'البريد الالكتروني',
-                                      style: TextStyle(
-                                        fontFamily: 'Roman',
-                                        fontSize: 11,
-                                        color: Colors.white,
-                                      ),
-                                    )
-                                  ),
+                              label: Text(
+                                'البريد الالكتروني',
+                                style: TextStyle(
+                                  fontFamily: 'Roman',
+                                  fontSize: 11,
+                                  color: Colors.white,
+                                ),
+                              )),
                           validator: (value) {
                             if (value!.isEmpty ||
                                 !RegExp(r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)')

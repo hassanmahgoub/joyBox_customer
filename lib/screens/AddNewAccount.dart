@@ -31,7 +31,7 @@ class _AddNewAccountState extends State<AddNewAccount> {
             key: formKey,
             child: Column(
               children: [
-                SvgPicture.asset('images/Taieri.svg', width: screenSize.width),
+                SvgPicture.asset('assets/images/Taieri.svg', width: screenSize.width),
                 const SizedBox(
                   height: 40,
                 ),
@@ -370,7 +370,7 @@ class _AddNewAccountState extends State<AddNewAccount> {
                               ),
                               Text('باشتراكك انت توافق علي جميع',
                                   style: TextStyle(
-                                      fontFamily: 'Roman',
+                                      fontFamily: 'sst arabic',
                                       fontSize: 11,
                                       color: Colors.white)),
                               CustomCheckBox(

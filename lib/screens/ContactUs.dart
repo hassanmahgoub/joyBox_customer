@@ -15,6 +15,7 @@ class ContactUs extends StatefulWidget {
 class _MyWidgetState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     final ScreenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xff010037),

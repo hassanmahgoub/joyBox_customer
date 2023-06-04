@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'NavigationBar.dart';
 import 'Profile.dart';
 
 class PasswordChange extends StatefulWidget {
@@ -24,7 +22,8 @@ class _PasswordChangeState extends State<PasswordChange> {
       backgroundColor: const Color(0xff010037),
       body: Stack(children: [
         SvgPicture.asset(
-          'images/Inner_patterns470x416.svg',
+          'assets/images/Inner_patterns470x416.svg',
+          height: 400,
           fit: BoxFit.cover,
           width: screenSize.width,
         ),
@@ -54,7 +53,7 @@ class _PasswordChangeState extends State<PasswordChange> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const HomePage()));
+                                      builder: (context) => const Profile()));
                             },
                           ),
                           const Text(

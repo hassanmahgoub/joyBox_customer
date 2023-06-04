@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
@@ -10,12 +12,14 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     final ScreenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xff010037),
+      backgroundColor: const Color(0xff010037),
       body: Container(
-        height: ScreenSize.height,
-        decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(25))),
+          height: ScreenSize.height,
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(25))),
     );
   }
 }

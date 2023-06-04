@@ -24,7 +24,7 @@ class _PickNowState extends State<PickNow> {
       body: Stack(
         children: [
           SvgPicture.asset(
-            'images/Inner_patterns470x416.svg',
+            'assets/images/Inner_patterns470x416.svg',
             fit: BoxFit.cover,
             width: screenSize.width,
           ),
@@ -151,6 +151,7 @@ class _PickNowState extends State<PickNow> {
                                         left: 5, right: 20, bottom: 5),
                                     child: Text('199',
                                         style: TextStyle(
+                                          fontFamily: 'sst arabic',
                                           color: Colors.white,
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -238,7 +239,7 @@ class _PickNowState extends State<PickNow> {
                                 const SizedBox(
                                   width: 5,
                                 ),
-                                SvgPicture.asset('images/cash.svg'),
+                                SvgPicture.asset('assets/images/cash.svg'),
                                 const SizedBox(
                                   width: 10,
                                 ),
@@ -294,6 +295,7 @@ class _PickNowState extends State<PickNow> {
                                         left: 5, right: 10, bottom: 5),
                                     child: Text('1200',
                                         style: TextStyle(
+                                          fontFamily: 'sst arabic',
                                           color: Colors.white,
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,
@@ -381,7 +383,7 @@ class _PickNowState extends State<PickNow> {
                                 const SizedBox(
                                   width: 5,
                                 ),
-                                SvgPicture.asset('images/cash.svg'),
+                                SvgPicture.asset('assets/images/cash.svg'),
                                 const SizedBox(
                                   width: 10,
                                 ),
@@ -434,6 +436,7 @@ class _PickNowState extends State<PickNow> {
                                         left: 5, right: 17, bottom: 5),
                                     child: Text('999',
                                         style: TextStyle(
+                                          fontFamily: 'sst arabic',
                                           color: Colors.white,
                                           fontSize: 16,
                                           fontWeight: FontWeight.bold,

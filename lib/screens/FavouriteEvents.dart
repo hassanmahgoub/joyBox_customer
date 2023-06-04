@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:joy_cu/screens/Profile.dart';
+import '../widgets/data.dart';
 import 'AboutEvent1.dart';
-import 'NavigationBar.dart';
 
 class FavouriteEvents extends StatefulWidget {
   const FavouriteEvents({Key? key}) : super(key: key);
@@ -21,7 +22,8 @@ class _FavouriteEventsState extends State<FavouriteEvents> {
       body: Stack(
         children: [
           SvgPicture.asset(
-            'images/Inner_patterns470x416.svg',
+            'assets/images/Inner_patterns470x416.svg',
+            height: 400,
             fit: BoxFit.cover,
             width: screenSize.width,
           ),
@@ -48,7 +50,7 @@ class _FavouriteEventsState extends State<FavouriteEvents> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const HomePage()));
+                                    builder: (context) => const Profile()));
                           },
                         ),
                         const Text(
@@ -66,422 +68,167 @@ class _FavouriteEventsState extends State<FavouriteEvents> {
                     ),
                   ),
                   Expanded(
-                    child: ListView.builder(
-                        itemCount: 1,
-                        itemBuilder: ((context, index) {
-                          return Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10, right: 10, bottom: 20),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(7),
-                                  child: Container(
-                                    height: 277,
-                                    width: screenSize.width,
-                                    decoration: BoxDecoration(
-                                        color: Colors.black,
-                                        borderRadius: BorderRadius.circular(7)),
-                                    child: Stack(
-                                      children: [
-                                        Image.asset(
-                                          'images/download-1.jpg',
-                                          fit: BoxFit.cover,
-                                          height: 277,
-                                          width: screenSize.width,
-                                        ),
-                                        Column(
+                      child: ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: users.length,
+                          itemBuilder: (context, index) {
+                            final user = users[index];
+                            return Column(
+                              children: [
+                                Padding(
+                                    padding: const EdgeInsets.only(
+                                        bottom: 10, left: 10, right: 10),
+                                    child: Container(
+                                        height: 277,
+                                        width: screenSize.width,
+                                        decoration: BoxDecoration(
+                                            color: Colors.blue,
+                                            borderRadius: BorderRadius.circular(7)),
+                                        child: Stack(
                                           children: [
+                                            user.image,
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 40, right: 25),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
+                                              padding: const EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              child: Column(
                                                 children: [
-                                                  const Icon(
-                                                    Icons.favorite,
-                                                    color: Colors.red,
-                                                  ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsets.only(
-                                                            top: 20),
-                                                    child: Container(
-                                                      height: 70,
-                                                      width: 53,
-                                                      decoration: BoxDecoration(
-                                                          color: Colors.white,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(6)),
-                                                      child: Column(
-                                                        children: const [
-                                                          Text(
-                                                            'الخميس',
-                                                            style: TextStyle(
-                                                                fontSize: 12,
-                                                                color: Color(
-                                                                    0xff010037)),
+                                                        const EdgeInsets.all(15),
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                      user.favourite,
+                                                        Container(
+                                                          height: 70,
+                                                          width: 50,
+                                                          decoration: BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(6),
+                                                            color: Colors.white,
                                                           ),
-                                                          Text(
-                                                            '09',
-                                                            style: TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                fontFamily:
-                                                                    'din',
-                                                                fontSize: 16,
-                                                                color: Color(
-                                                                    0xff25E0B1)),
+                                                          child: Column(
+                                                            children: [
+                                                              Text(
+                                                                user.dayName,
+                                                                style: const TextStyle(
+                                                                    fontSize: 10,
+                                                                    fontFamily:
+                                                                        'sst arabic'),
+                                                              ),
+                                                              Text(
+                                                                user.dayNumber
+                                                                    .toString(),
+                                                                style: const TextStyle(
+                                                                    fontSize: 15,
+                                                                    color: Color(
+                                                                        0xff25E0B1),
+                                                                    fontFamily:
+                                                                        'din',
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold),
+                                                              ),
+                                                              Text(
+                                                                user.month,
+                                                                style: const TextStyle(
+                                                                    color: Colors
+                                                                        .black,
+                                                                    fontSize: 12,
+                                                                    fontFamily:
+                                                                        'sst arabic'),
+                                                              ),
+                                                            ],
                                                           ),
-                                                          Text(
-                                                            'يونيو',
-                                                            style: TextStyle(
-                                                                fontFamily:
-                                                                    'dn',
-                                                                fontSize: 14,
-                                                                color: Color(
-                                                                    0xff010037)),
-                                                          ),
-                                                        ],
-                                                      ),
+                                                        )
+                                                      ],
                                                     ),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 100,
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 28),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  const CircleAvatar(
-                                                    backgroundColor:
-                                                        Colors.white,
-                                                    radius: 25,
                                                   ),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: [
-                                                      const Text(
-                                                        'مهرجان الثقافة بإثراء',
-                                                        style: TextStyle(
-                                                            fontSize: 13,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily:
-                                                                'sst arabic',
-                                                            color:
-                                                                Colors.white),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 5,
-                                                      ),
-                                                      InkWell(
-                                                        child: const Text(
-                                                          'مزيد من التفاصيل',
-                                                          style: TextStyle(
-                                                              color:
-                                                                  Colors.white,
-                                                              fontSize: 8),
+                                                  Expanded(child: Container()),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.symmetric(
+                                                            horizontal: 10,
+                                                            vertical: 20),
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Image.asset('assets/images/Group 492@3x.png',height: 50,),
+                                                         const SizedBox(
+                                                          width: 10,
                                                         ),
-                                                        onTap: () {
-                                                          Navigator.push(
-                                                              context,
-                                                              MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          const AboutEvent1()));
-                                                        },
-                                                      ),
-                                                    ],
-                                                  )
+                                                        Column(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            Text(
+                                                              user.title,
+                                                              style: const TextStyle(
+                                                                  color:
+                                                                      Colors.white,
+                                                                  fontFamily:
+                                                                      'sst arabic',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                            SizedBox(
+                                                              height: 5,
+                                                            ),
+                                                            GestureDetector(
+                                                              onTap: () {
+                                                                Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutEvent1()));
+                                                              },
+                                                              child: Text(
+                                                                user.about,
+                                                                style:
+                                                                    const TextStyle(
+                                                                        color: Colors
+                                                                            .white,
+                                                                        fontFamily:
+                                                                            'din',
+                                                                        fontSize: 11),
+                                                              ),
+                                                            )
+                                                          ],
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  
                                                 ],
                                               ),
-                                            )
+                                            ),
                                           ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, right: 10, bottom: 20),
-                                  child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(7),
-                                      child: Container(
-                                        height: 277,
-                                        width: screenSize.width,
-                                        decoration: BoxDecoration(
-                                            color: Colors.black,
-                                            borderRadius:
-                                                BorderRadius.circular(7)),
-                                        child: Stack(children: [
-                                          Image.asset(
-                                            'images/download-2.jpg',
-                                            fit: BoxFit.cover,
-                                            height: 277,
-                                            width: screenSize.width,
-                                          ),
-                                          Column(children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 40, right: 25),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  const Icon(
-                                                    Icons.favorite,
-                                                    color: Colors.red,
-                                                  ),
-                                                  Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              top: 20),
-                                                      child: Container(
-                                                        height: 70,
-                                                        width: 53,
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.white,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        6)),
-                                                        child: Column(
-                                                          children: const [
-                                                            Text(
-                                                              'الخميس',
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  color: Color(
-                                                                      0xff010037)),
-                                                            ),
-                                                            Text(
-                                                              '09',
-                                                              style: TextStyle(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontFamily:
-                                                                      'din',
-                                                                  fontSize: 16,
-                                                                  color: Color(
-                                                                      0xff25E0B1)),
-                                                            ),
-                                                            Text(
-                                                              'يونيو',
-                                                              style: TextStyle(
-                                                                  fontFamily:
-                                                                      'dn',
-                                                                  fontSize: 14,
-                                                                  color: Color(
-                                                                      0xff010037)),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ))
-                                                ],
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 100,
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 28),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  const CircleAvatar(
-                                                    backgroundColor:
-                                                        Colors.white,
-                                                    radius: 25,
-                                                  ),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: const [
-                                                      // Text('مهرجان الثقافة بإثراء',style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, fontFamily: 'sst arabic', color: Colors.white),),
-                                                      // SizedBox(height: 5,),
-                                                      // Text('مزيد من التفاصيل',style: TextStyle(color: Colors.white,fontSize: 10),)
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                            )
-                                          ]),
-                                        ]),
-                                      ))),
-                              Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, right: 10, bottom: 20),
-                                  child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(7),
-                                      child: Container(
-                                        height: 277,
-                                        width: screenSize.width,
-                                        decoration: BoxDecoration(
-                                            color: Colors.black,
-                                            borderRadius:
-                                                BorderRadius.circular(7)),
-                                        child: Stack(children: [
-                                          Image.asset(
-                                            'images/download.jpg',
-                                            fit: BoxFit.cover,
-                                            height: 277,
-                                            width: screenSize.width,
-                                          ),
-                                          Column(children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 40, right: 25),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  const Icon(
-                                                    Icons.favorite,
-                                                    color: Colors.red,
-                                                  ),
-                                                  Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              top: 20),
-                                                      child: Container(
-                                                        height: 70,
-                                                        width: 53,
-                                                        decoration: BoxDecoration(
-                                                            color: Colors.white,
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        6)),
-                                                        child: Column(
-                                                          children: const [
-                                                            Text(
-                                                              'الخميس',
-                                                              style: TextStyle(
-                                                                  fontSize: 12,
-                                                                  color: Color(
-                                                                      0xff010037)),
-                                                            ),
-                                                            Text(
-                                                              '09',
-                                                              style: TextStyle(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontFamily:
-                                                                      'din',
-                                                                  fontSize: 16,
-                                                                  color: Color(
-                                                                      0xff25E0B1)),
-                                                            ),
-                                                            Text(
-                                                              'يونيو',
-                                                              style: TextStyle(
-                                                                  fontFamily:
-                                                                      'dn',
-                                                                  fontSize: 14,
-                                                                  color: Color(
-                                                                      0xff010037)),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ))
-                                                ],
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 100,
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 28),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  const CircleAvatar(
-                                                    backgroundColor:
-                                                        Colors.white,
-                                                    radius: 25,
-                                                  ),
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: const [
-                                                      Text(
-                                                        'ليلة نغم',
-                                                        style: TextStyle(
-                                                            fontSize: 13,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily:
-                                                                'sst arabic',
-                                                            color:
-                                                                Colors.white),
-                                                      ),
-                                                      SizedBox(
-                                                        height: 5,
-                                                      ),
-                                                      Text(
-                                                        'مزيد من التفاصيل',
-                                                        style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 8),
-                                                      )
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ]),
-                                        ]),
-                                      ))),
-                              const Icon(
-                                Icons.expand_less,
-                                size: 35,
-                              ),
-                              const Text(
-                                'لا يوجد مزيد من الفعاليات',
-                                style: TextStyle(
-                                    color: Color(0xff010037),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              )
-                            ],
-                          );
-                        })),
-                  )
+                                        ),
+                                        ),
+                                        ),
+                                        
+                              ],
+                            );
+                                    
+                          }
+                          
+                          
+                          ),
+                          
+                          ),
+                          
+                          
                 ],
               ),
             ),
           ),
+          
         ],
       ),
     );

@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'NavigationBar.dart';
 import 'Profile.dart';
 
 class ProfileEdit extends StatefulWidget {
@@ -19,14 +17,16 @@ class _ProfileEditState extends State<ProfileEdit> {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> ScaffoldKey =GlobalKey<ScaffoldState>();
+    // ignore: non_constant_identifier_names
+    final GlobalKey<ScaffoldState> ScaffoldKey = GlobalKey<ScaffoldState>();
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      key:ScaffoldKey,
+      key: ScaffoldKey,
       backgroundColor: const Color(0xff010037),
       body: Stack(children: [
         SvgPicture.asset(
-          'images/Inner_patterns470x416.svg',
+          'assets/images/Inner_patterns470x416.svg',
+          height: 400,
           fit: BoxFit.cover,
           width: screenSize.width,
         ),
@@ -61,7 +61,10 @@ class _ProfileEditState extends State<ProfileEdit> {
                                 InkWell(
                                   child: const Icon(Icons.arrow_back_ios),
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Profile()));
                                   },
                                 ),
                                 const Text(
@@ -89,11 +92,14 @@ class _ProfileEditState extends State<ProfileEdit> {
                               ),
                               child: FormBuilder(
                                 child: TextFormField(
+                                  textAlign: TextAlign.end,
                                   style: TextStyle(color: Color(0xff010037)),
                                   keyboardType: TextInputType.name,
                                   decoration: InputDecoration(
-
-                                    focusedBorder: OutlineInputBorder( borderSide: BorderSide(width: 1.5, color: Color(0xff25E0B1))),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            width: 1.5,
+                                            color: Color(0xff25E0B1))),
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: const BorderSide(
                                           width: 1.5, color: Color(0xff25E0B1)),
@@ -102,16 +108,14 @@ class _ProfileEditState extends State<ProfileEdit> {
                                     // border: const OutlineInputBorder(
                                     //     //borderSide: BorderSide(color: Color(0xff25E0B1), strokeAlign: StrokeAlign.outside),
                                     //     ),
-                                    label: 
-                                          Text(
-                                            'الاسم الاول',
-                                            style: TextStyle(
-                                                fontSize: 11,
-                                                color: Color(0xff010037),
-                                                fontFamily: 'Roman'),
-                                          ),
-                                          //floatingLabelAlignment:FloatingLabelAlignment.center,
-                                        
+                                    label: Text(
+                                      'الاسم الاول',
+                                      style: TextStyle(
+                                          fontSize: 11,
+                                          color: Color(0xff010037),
+                                          fontFamily: 'sst arabic'),
+                                    ),
+                                    //floatingLabelAlignment:FloatingLabelAlignment.center,
                                   ),
                                   validator: (value) {
                                     if (value!.isEmpty ||
@@ -137,27 +141,29 @@ class _ProfileEditState extends State<ProfileEdit> {
                               ),
                               child: FormBuilder(
                                 child: TextFormField(
+                                  textAlign: TextAlign.end,
                                   keyboardType: TextInputType.name,
                                   style: TextStyle(color: Color(0xff010037)),
                                   decoration: InputDecoration(
-                                    focusedBorder: OutlineInputBorder( borderSide: BorderSide(width: 1.5, color: Color(0xff25E0B1))),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          width: 1.5, color: Color(0xff25E0B1)),
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    border: const OutlineInputBorder(
-                                        borderSide: BorderSide.none),
-                                    label: 
-                                          Text(
-                                            'الاسم الاخير',
-                                            style: TextStyle(
-                                                fontSize: 11,
-                                                color: Color(0xff010037),
-                                                fontFamily: 'Roman'),
-                                          )
-                                        
-                                  ),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              width: 1.5,
+                                              color: Color(0xff25E0B1))),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            width: 1.5,
+                                            color: Color(0xff25E0B1)),
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      border: const OutlineInputBorder(
+                                          borderSide: BorderSide.none),
+                                      label: Text(
+                                        'الاسم الاخير',
+                                        style: TextStyle(
+                                            fontSize: 11,
+                                            color: Color(0xff010037),
+                                            fontFamily: 'sst arabic'),
+                                      )),
 
                                   // ignore: body_might_complete_normally_nullable
                                   validator: (value) {
@@ -183,10 +189,14 @@ class _ProfileEditState extends State<ProfileEdit> {
                               height: 45,
                               child: FormBuilder(
                                 child: TextFormField(
+                                  textAlign: TextAlign.end,
                                   style: TextStyle(color: Color(0xff010037)),
                                   keyboardType: TextInputType.emailAddress,
                                   decoration: InputDecoration(
-                                    focusedBorder: OutlineInputBorder( borderSide: BorderSide(width: 1.5, color: Color(0xff25E0B1))),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              width: 1.5,
+                                              color: Color(0xff25E0B1))),
                                       enabledBorder: OutlineInputBorder(
                                           borderSide: const BorderSide(
                                               width: 1.5,
@@ -195,16 +205,14 @@ class _ProfileEditState extends State<ProfileEdit> {
                                               BorderRadius.circular(5)),
                                       border: const OutlineInputBorder(
                                           borderSide: BorderSide.none),
-                                      label: 
-                                            Text(
-                                              'البريد الالكتروني',
-                                              style: TextStyle(
-                                                fontFamily: 'Roman',
-                                                fontSize: 11,
-                                                color: Color(0xff010037),
-                                              ),
-                                            )
-                                          ),
+                                      label: Text(
+                                        'البريد الالكتروني',
+                                        style: TextStyle(
+                                          fontFamily: 'sst arabic',
+                                          fontSize: 11,
+                                          color: Color(0xff010037),
+                                        ),
+                                      )),
                                   validator: (value) {
                                     if (value!.isEmpty ||
                                         !RegExp(r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)')
@@ -230,10 +238,14 @@ class _ProfileEditState extends State<ProfileEdit> {
                               ),
                               child: FormBuilder(
                                 child: TextFormField(
+                                  textAlign: TextAlign.end,
                                     keyboardType: TextInputType.number,
                                     style: TextStyle(color: Color(0xff010037)),
                                     decoration: InputDecoration(
-                                      focusedBorder: OutlineInputBorder( borderSide: BorderSide(width: 1.5, color: Color(0xff25E0B1))),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              width: 1.5,
+                                              color: Color(0xff25E0B1))),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                             width: 1.5,
@@ -242,14 +254,14 @@ class _ProfileEditState extends State<ProfileEdit> {
                                       ),
                                       border: OutlineInputBorder(
                                           borderSide: BorderSide.none),
-                                      label: 
-                                            Text(
-                                              'رقم الجوال',
-                                              style: TextStyle(
-                                                  fontSize: 11,
-                                                  color: Color(0xff010037),
-                                                  fontFamily: 'Roman'),
-                                            ),
+                                      label: Text(
+                                        'رقم الجوال',
+                                        textAlign: TextAlign.end,
+                                        style: TextStyle(
+                                            fontSize: 11,
+                                            color: Color(0xff010037),
+                                            fontFamily: 'sst arabic'),
+                                      ),
                                     ),
                                     validator: (value) {
                                       if (value!.isEmpty ||
@@ -294,7 +306,10 @@ class _ProfileEditState extends State<ProfileEdit> {
                                     textAlign: TextAlign.center,
                                   ));
                                   // ScaffoldKey.currentState!.showSnackBar(snackBar);
-                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Profile()));
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Profile()));
                                 }
                               },
                             ),

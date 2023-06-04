@@ -14,13 +14,15 @@ class Tickets extends StatefulWidget {
 class _MyWidgetState extends State<Tickets> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
     final ScreenSize = MediaQuery.of(context).size;
     return Scaffold(
-       backgroundColor: const Color(0xff010037),
+      backgroundColor: const Color(0xff010037),
       body: Container(
         height: ScreenSize.height,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),color: Colors.white),
-        child: Center(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25), color: Colors.white),
+        child: const Center(
             child: Text(
           'Here is the Contact Us page',
           style: TextStyle(fontWeight: FontWeight.bold),

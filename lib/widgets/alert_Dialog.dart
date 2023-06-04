@@ -23,7 +23,7 @@ class AlertDialogs {
                 child: Text(
               title,
               style: TextStyle(
-                  fontSize: 15, fontFamily: 'rb', fontWeight: FontWeight.bold),
+                  fontSize: 15, fontFamily: 'sst arabic', fontWeight: FontWeight.bold),
             )),
             //content:  Text(body),
             actions: [
@@ -43,7 +43,7 @@ class AlertDialogs {
                         child: Text(
                           'إلغاء',
                           style: TextStyle(
-                              fontFamily: 'rb',
+                              fontFamily: 'sst arabic',
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Color(0xff25E0B1)),
@@ -67,7 +67,7 @@ class AlertDialogs {
                         child: Text(
                           'تأكيد',
                           style: TextStyle(
-                              fontFamily: 'rb',
+                              fontFamily: 'sst arabic',
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Color(0xff25E0B1)),

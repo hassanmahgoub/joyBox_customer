@@ -61,7 +61,7 @@ class _AddToWalletState extends State<AddToWallet1> {
                             BorderRadius.only(topLeft: Radius.circular(7))),
                     child: Stack(children: [
                       Image.asset(
-                        'images/download-1.jpg',
+                        'assets/images/download-1.jpg',
                         fit: BoxFit.cover,
                         height: 205,
                         width: screenSize.width,
@@ -110,7 +110,7 @@ class _AddToWalletState extends State<AddToWallet1> {
                                       bottomRight: Radius.circular(7))),
                             ),
                             Image.asset(
-                              'images/120-1202187_transparent-white-qr-code-png-subscribe-to-pewdiepie.png',
+                              'assets/images/120-1202187_transparent-white-qr-code-png-subscribe-to-pewdiepie.png',
                               height: 200,
                             ),
                             Container(
@@ -157,10 +157,10 @@ class _AddToWalletState extends State<AddToWallet1> {
                             direction: Axis.horizontal,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: List.generate(
-                                74,
+                                69,
                                 (index) => SizedBox(
                                       height: 2,
-                                      width: 5,
+                                      width: 4.8,
                                       child: DecoratedBox(
                                           decoration: BoxDecoration(
                                               borderRadius:
@@ -197,10 +197,10 @@ class _AddToWalletState extends State<AddToWallet1> {
                             direction: Axis.horizontal,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: List.generate(
-                                74,
+                                69,
                                 (index) => SizedBox(
                                       height: 2,
-                                      width: 5,
+                                      width: 4.8,
                                       child: DecoratedBox(
                                           decoration: BoxDecoration(
                                               borderRadius:
@@ -209,7 +209,7 @@ class _AddToWalletState extends State<AddToWallet1> {
                                     )),
                           ),
                           Container(
-                            height: 8,
+                            height: 16,
                             width: 10,
                             decoration: const BoxDecoration(
                                 color: Color(0xff010037),

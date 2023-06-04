@@ -26,7 +26,8 @@ class _MyWidgetState extends State<Profile> {
       backgroundColor: const Color(0xff010037),
       body: Stack(children: [
         SvgPicture.asset(
-          'images/Inner_patterns470x416.svg',
+          'assets/images/Inner_patterns470x416.svg',
+          height: 400,
           fit: BoxFit.cover,
           width: screenSize.width,
         ),
@@ -52,24 +53,22 @@ class _MyWidgetState extends State<Profile> {
                             decoration: BoxDecoration(
                                 color: const Color(0xff25E0B1),
                                 borderRadius: BorderRadius.circular(25)),
-                            child: Padding(
+                            child:  Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 15),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
-                                  Text(
+                                children: [
+                                  const Text(
                                     'الإعدادات',
                                     style: TextStyle(
+                                      fontFamily: 'sst arabic',
                                         fontSize: 11,
                                         color: Color(0xff010037),
                                         fontWeight: FontWeight.w500),
                                   ),
-                                  Icon(
-                                    Icons.settings_outlined,
-                                    color: Color(0xff010037),
-                                  ),
+                                  SvgPicture.asset('assets/images/Path 515.svg')
                                 ],
                               ),
                             ),
@@ -78,7 +77,7 @@ class _MyWidgetState extends State<Profile> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Settings()));
+                                    builder: (context) => const Settings()));
                           },
                         ),
                         const Text(
@@ -94,24 +93,20 @@ class _MyWidgetState extends State<Profile> {
                   const SizedBox(
                     height: 15,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      children: const [
-                        Icon(
-                          Icons.notifications_outlined,
-                          size: 30,
-                        ),
-                      ],
-                    ),
-                  ),
+                  
                   const SizedBox(
                     height: 30,
                   ),
-                  const Text(
-                    'تطبيق مسجل ومرخص لبيع تذاكر الفعاليات الترفيهية والرياضية من وزارة التجارة ووزارة الترفية، صندوق المرح هو أحد منتجات شركة مكعبات لتقنية المعلومات',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.w300, fontSize: 13),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      'تطبيق مسجل ومرخص لبيع تذاكر الفعاليات الترفيهية والرياضية من وزارة التجارة ووزارة الترفية، صندوق المرح هو أحد منتجات شركة مكعبات لتقنية المعلومات',
+                      
+                      textAlign: TextAlign.end,
+                      style: TextStyle(fontWeight: FontWeight.w300, fontSize: 13,
+                      fontFamily: 'sst arabic'
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     height: 60,
@@ -129,6 +124,7 @@ class _MyWidgetState extends State<Profile> {
                           child: const Text(
                             'تذاكري',
                             style: TextStyle(
+                              fontFamily: 'sst arabic',
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                                 color: Color(0xff25E0B1)),
@@ -156,6 +152,7 @@ class _MyWidgetState extends State<Profile> {
                             child: Text(
                           'الفعاليات المفضلة',
                           style: TextStyle(
+                            fontFamily: 'sst arabic',
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                               color: Color(0xff25E0B1)),
@@ -185,6 +182,7 @@ class _MyWidgetState extends State<Profile> {
                           child: Text(
                             'تعديل الملف الشخصي',
                             style: TextStyle(
+                              fontFamily: 'sst arabic',
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                                 color: Color(0xff25E0B1)),
@@ -215,6 +213,7 @@ class _MyWidgetState extends State<Profile> {
                             child: Text(
                           'تغيير كلمة المرور',
                           style: TextStyle(
+                            fontFamily: 'sst arabic',
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                               color: Color(0xff25E0B1)),
@@ -244,6 +243,7 @@ class _MyWidgetState extends State<Profile> {
                             child: Text(
                           'تسجيل خروج من التطبيق',
                           style: TextStyle(
+                            fontFamily: 'sst arabic',
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                               color: Color(0xff25E0B1)),
@@ -265,11 +265,11 @@ class _MyWidgetState extends State<Profile> {
             ),
           ),
         ),
-        Center(
+        const Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 120),
+            padding: EdgeInsets.only(top: 120),
             child: Column(
-              children: const [
+              children: [
                 ClipRRect(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
@@ -283,7 +283,7 @@ class _MyWidgetState extends State<Profile> {
                       backgroundColor: Colors.white,
                       child: CircleAvatar(
                         radius: 50,
-                        backgroundImage: AssetImage('images/4E9B01BE-4CD2-4E94-BEE1-B9597E0D58E4_1_102_o.jpeg'),
+                        //backgroundImage: AssetImage('images/4E9B01BE-4CD2-4E94-BEE1-B9597E0D58E4_1_102_o.jpeg'),
                         ),
                     ),
                     ),

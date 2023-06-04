@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'NavigationBar.dart';
 import 'PasswordRemember.dart';
 
@@ -16,8 +15,7 @@ class loginPage extends StatefulWidget {
 }
 
 class _HomePageState extends State<loginPage> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+ 
 
   final formKey = GlobalKey<FormState>();
   late String name;
@@ -37,7 +35,9 @@ class _HomePageState extends State<loginPage> {
               key: formKey,
               child: Column(children: [
                 SvgPicture.asset(
-                  'images/Inner_patterns470x416.svg',
+                  'assets/images/Inner_patterns470x416.svg',
+                  height: 410,
+                  fit: BoxFit.cover,
                   width: screenSize.width,
                 ),
                 SafeArea(
@@ -66,11 +66,9 @@ class _HomePageState extends State<loginPage> {
                                   borderRadius: BorderRadius.circular(7)),
                               height: 45,
                               child: TextFormField(
-                                onTap: () async {
-                                  SharedPreferences _prefs = await SharedPreferences.getInstance();
-                                  _prefs.setString('E', _emailController.text);
-                                  _prefs.setString('P', _passwordController.text);
-                                  print(_emailController);
+                                textAlign: TextAlign.end,
+                                onTap: (){
+                                  
                                 },
                                 keyboardType: TextInputType.emailAddress,
                                 style: TextStyle(color: Colors.white),
@@ -88,6 +86,7 @@ class _HomePageState extends State<loginPage> {
                                     label: 
                                           Text(
                                             'البريد الالكتروني',
+                                            textAlign: TextAlign.end,
                                             style: TextStyle(
                                               fontFamily: 'Roman',
                                               fontSize: 11,
@@ -117,13 +116,12 @@ class _HomePageState extends State<loginPage> {
                                   borderRadius: BorderRadius.circular(7)),
                               height: 45,
                               child: TextFormField(
-                                onSaved: (newValue) async {
-                                  SharedPreferences _prefs = await SharedPreferences.getInstance();
-                                  _prefs.setString('E', _emailController.text);
-                                  _prefs.setString('P', _passwordController.text);
+                                onSaved: (newValue)  {
+                                  
                                 },
                                 style: TextStyle(color: Colors.white),
                                 keyboardType: TextInputType.visiblePassword,
+                                obscureText: true,
                                 decoration: InputDecoration(
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(7),
@@ -171,7 +169,7 @@ class _HomePageState extends State<loginPage> {
                                   style: TextStyle(
                                       fontSize: 16,
                                       color: Color(0xff010037),
-                                      fontFamily: 'Roman',
+                                      fontFamily: 'sst arabic',
                                       fontWeight: FontWeight.bold),
                                 ),
                                 onPressed: () {
@@ -189,7 +187,7 @@ class _HomePageState extends State<loginPage> {
                                         confirmBtnColor: Color(0xff25E0B1),
                                         backgroundColor: Color(0xff010037),
                                         onConfirmBtnTap: () {
-                                          Navigator.push(
+                                          Navigator.pushReplacement(
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>

@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           child: Transform.rotate(
             angle: 5.50,
-            child: SvgPicture.asset('images/menu_homebutton25x31.svg')),
+            child: SvgPicture.asset('assets/images/menu_homebutton25x31.svg')),
           ),
         ),
       ),
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset(
-                          'images/menu_account22x24.svg',
+                          'assets/images/menu_account22x24.svg',
                         ),
                         
                         Text(
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset(
-                          'images/menu_account22x24.svg',
+                          'assets/images/menu_account22x24.svg',
                           color: Colors.white,
                         ),
                         
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset('images/menu_support20x24 copy.svg'),
+                          SvgPicture.asset('assets/images/menu_support20x24 copy.svg'),
                           Text(
                             'الدعم',
                             style: TextStyle(
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset('images/menu_support20x24 copy.svg',color: Colors.white,),
+                          SvgPicture.asset('assets/images/menu_support20x24 copy.svg',color: Colors.white,),
                          
                           Text(
                             'الدعم',
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset('images/menu_tickets_24x24.svg'),
+                          SvgPicture.asset('assets/images/menu_tickets_24x24.svg'),
                          
                           Text(
                             'تذاكري',
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SvgPicture.asset('images/menu_tickets_24x24.svg',color: Colors.white,),
+                          SvgPicture.asset('assets/images/menu_tickets_24x24.svg',color: Colors.white,),
                           
                           Text(
                             'تذاكري',
@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SvgPicture.asset('images/menu_events24x24.svg'),
+                        SvgPicture.asset('assets/images/menu_events24x24.svg'),
                        
                         Text(
                           'الفعاليات',
@@ -158,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                   activeIcon: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SvgPicture.asset('images/menu_events24x24.svg',color: Colors.white,),
+                        SvgPicture.asset('assets/images/menu_events24x24.svg',color: Colors.white,),
                         
                         Text(
                           'الفعاليات',
