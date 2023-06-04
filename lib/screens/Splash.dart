@@ -2,7 +2,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:joy_cu/screens/LoginPage.dart';
 import 'beginPage.dart';
 
 class Splash extends StatefulWidget {
